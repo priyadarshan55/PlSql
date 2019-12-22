@@ -106,9 +106,8 @@ AS
                     E.Sal   AS Salary,
                     E.Comm  AS Commission,
                     E.Sal + NVL(E.Comm, 0) AS Total_Salary,
-                    (E.Sal + NVL(E.Comm, 0) * 12) AS Salary_per_Anum,
-                    D.Dname AS Department_Name,
-                    D.Deptno
+                    (E.Sal + NVL(E.Comm, 0) * 12 AS Salary_per_Anum,
+                    D.Dname AS Department_Name
               FROM Emp E
               LEFT JOIN Dept D ON (E.Deptno = D.Deptno)';
               
